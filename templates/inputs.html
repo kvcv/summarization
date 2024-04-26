@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .sections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.section {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    height: 500px; /* Set fixed height */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+.section iframe {
+    width: 100%;
+    height: 100%; /* Set iframe height to fill the section */
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News Summary</h1>
+        <form action="/summary" method="post">
+            <input type="text" name="url" placeholder="Enter News Portal URL" size="120">
+            <br>
+            <input type="submit" value="Get Summary">
+        </form>
+        <div class="sections">
+            <div class="section">
+                <h2>Full News</h2>
+                {% if news %}
+                <p>{{ news }}</p>
+                {% endif %}
+            </div>
+            <div class="section">
+                <h2>Summary</h2>
+                {% if summary %}
+                <p>{{ summary }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
