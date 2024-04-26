@@ -1,2 +1,6 @@
-# Summarization
- This project comprises the code necessary to extract information from either text or a URL in order to generate a summary.
+# Task: Build an app for summarizing news articles
+
+Ever seen a news headline and just wanted to know the gist if it without reading so many words
+or dealing with ads, then this is for you!
+
+Stay in touch with happenings worldwide in just a few seconds!
